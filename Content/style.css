@@ -168,7 +168,16 @@ html, body {
     text-decoration: none;
 }
 
-.fizz, .bizz, .fizzbuzz {
+.fizz, .buzz, .fizzbuzz {
     font-weight: bold;
     color: #fcd088;
+}
+
+#bottom-icons {
+    position: absolute;
+    bottom: 20px;
+}
+
+#bottom-icons img{
+    max-width: 100px;
 }
