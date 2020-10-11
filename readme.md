@@ -2,7 +2,7 @@
 
 This is a complete minisite that contains a visual representation of the "FizzBuzz" challenge.
 
-## What is the "TacocaT" challenge?
+## What is the "FizzBuzz" challenge?
 
 "FizzBuzz" is a well known challenge about detecting multiples. Multiples of 3 are labeled a "Fizz", multiples of 5 a "Buzz", and the multiples of both a "FizzBuzz"! In this minisite you have the option of selecting value 1 and value 2.
 
