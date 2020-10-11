@@ -54,6 +54,9 @@ table{
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
     overflow-y: scroll;
+    background-image: url("../Images/energy-drink-no-color.svg");
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .content-centered {
@@ -193,4 +196,11 @@ html, body {
 
 #bottom-icons img{
     max-width: 100px;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid white;
+    border-top: 1px solid white;
 }

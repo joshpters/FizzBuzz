@@ -12,6 +12,7 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link href="Content/style.css" rel="stylesheet" />
 </head>
 
@@ -39,13 +40,10 @@
                             <a class="nav-link" href="/Code.html">Code</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Git</a>
+                            <a class="nav-link" href="https://github.com/joshpters/FizzBuzz">Git</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Portfolio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Blog Post/YouTube Explanation</a>
+                            <a class="nav-link" href="https://joshua-peters.netlify.app">Portfolio</a>
                         </li>
                     </ul>
                 </div>
@@ -55,6 +53,12 @@
         <!-- Page Content -->
         <div class="content content-centered">
             <div class="container" id="content-container">
+                <div class="row text-center">
+                    <div class="col">
+                        <h1>FizzBuzz</h1>
+                        <p>If Value 1 is a multiple, it'll be tagged "Fizz" and Value 2 "Buzz". Where both are a multiple, it's a "FizzBuzz"!</p>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 bottom-buffer">   
                         <input type="text" value="" id="input-value-one" class="input-string" placeholder="Value 1 (Fizz)" />
@@ -75,8 +79,8 @@
                         </table>
                     </div>
                 </div>
+            </div>
         </div>
-    </div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -98,7 +102,6 @@
                 }
                 html = html + `</tr>`
             }
-
             gridBody.innerHTML = html;
         }
 
@@ -156,11 +159,11 @@
 
             
             tableData.classList.add(`${fizzbuzz.toLowerCase()}`);
+            tableData.classList.add(`animate__bounceIn`)
             tableData.innerHTML = fizzbuzz;
         }
 
         buzzIt(3, 5)
-
 
     </script>
 
