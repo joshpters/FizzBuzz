@@ -75,63 +75,73 @@
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="javascript" role="tabpanel" aria-labelledby="home-tab">
                                 <pre>
-<code class="language-js line-numbers">
-function tacocat() {
-    inputText = document.getElementById('input-string').value
-    output = document.getElementById('output')
+<code class="language-js line-numbers">function buzzIt(valueOne, valueTwo) {
+    for (i = 1; i <= 100; i++) {
+        let fizz = false;
+        let buzz = false;
 
-    if (!inputText) {
-    output.style.border = "1px solid red"
-    output.style.color = "red"
-    output.innerHTML = "Please enter some text to reverse."
-    return
+        if (i % valueOne == 0) {
+            fizz = true;
+        }
+        if (i % valueTwo == 0) {
+            buzz = true;
+        }
+
+        //the tagIt function tags the corresponding element in the UI with Fizz, Buzz, or FizzBuzz.
+        tagIt(i, [fizz, buzz])
+
     }
-
-    output.style.border = "1px solid #fcd088"
-    output.style.color = "#fcd088"
-
-
-    output.innerHTML = reverseText(inputText);
-
-    outputText = reverseText(inputText);
-
-    if (validate(inputText, outputText)){
-    console.log("TACOCAT!!!")
-    }
-
 }
-
-function validate(textOne, textTwo) {
-textOne = textOne.replace(/\s|\'|\"/g, '');
-textTwo = textTwo.replace(/\s|\'|\"/g, '');
-
-if (textOne.toLowerCase() == textTwo.toLowerCase()) {
-    return true;
-}
-
-    return false;
-}
-
-function reverseText(text) {
-    let output = "";
-    for (let i = text.length - 1; i >= 0; i--) {
-        output += text[i];
-    }
-    return output;
-}
-
-document.getElementById('solve-button').addEventListener('click', function (event) {
-    tacocat();
-});
 </code>
                                             </pre>
                             </div>
                             <div class="tab-pane fade" id="html" role="tabpanel" aria-labelledby="profile-tab">
-                                <pre>
-code.
+<pre>
+<code class="language-html linenumbers">&lt;!-- Page Content --&gt;
+&lt;div class="content content-centered"&gt;
+    &lt;div class="container" id="content-container"&gt;
+        &lt;div class="row text-center animate__animated animate__fadeIn animate__delay-1s"&gt;
+            &lt;div class="col"&gt;
+                &lt;h1&gt;FizzBuzz&lt;/h1&gt;
+                &lt;p&gt;If Value 1 is a multiple, it'll be tagged "Fizz" and Value 2 "Buzz". Where both are a multiple, it's a "FizzBuzz"!&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col bottom-buffer animate__animated animate__fadeIn animate__delay-1s"&gt;
+                &lt;input type="text" value="" id="input-value-one" class="input-string" placeholder="Value 1 (Fizz)" /&gt;
+            &lt;/div&gt;
+            &lt;div class="col bottom-buffer animate__animated animate__fadeIn animate__delay-1s"&gt;
+                &lt;input type="text" value="" id="input-value-two" class="input-string" placeholder="Value 2 (Buzz)" /&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="row text-center animate__animated animate__backInUp"&gt;
+            &lt;div class="col"&gt;
+                &lt;table class="table table-responsive-lg table-striped table-dark"&gt;
+                    &lt;tbody id="generate-grid"&gt;
+                        &lt;!-- JavaScript generated grid --&gt;
+                    &lt;/tbody&gt;
+                &lt;/table&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code>
 </pre>
                             </div>
-                            <div class="tab-pane fade" id="css" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                            <div class="tab-pane fade" id="css" role="tabpanel" aria-labelledby="contact-tab">
+<pre>
+<code class="language-css line-numbers">#buzz-it-button{
+    width: 100%;
+}
+
+.fizz, .buzz, .fizzbuzz {
+    font-weight: bold;
+    color: #fcd088;
+}
+
+</code>
+</pre>
+                            </div>
                         </div>
                     </div>
                 </div>
