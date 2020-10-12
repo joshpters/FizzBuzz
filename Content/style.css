@@ -76,15 +76,7 @@ table{
     color:white;
 }
 
-
-
 #window {
-    /*-webkit-animation: fadein 1s;*/ /* Safari, Chrome and Opera > 12.1 */
-    /*-moz-animation: fadein 1s;*/ /* Firefox < 16 */
-    /*-ms-animation: fadein 1s;*/ /* Internet Explorer */
-    /*-o-animation: fadein 1s;*/ /* Opera < 12.1 */
-    /*animation: fadein 1s;*/
-    /*overflow-y: scroll !important;*/
     width: 95%;
     height: 95%;
     margin: auto;
@@ -92,11 +84,6 @@ table{
     display: flex;
     flex-direction: column;
 }
-
-/*#content-div {
-    background-color: #242a30;*/
-    /*height: 100%;*/
-/*}*/
 
 #window {
     position: absolute;
@@ -106,7 +93,6 @@ table{
     -ms-transform: translate(-50%, -50%);
     IE 9 -webkit-transform: translate(-50%, -50%);
     Chrome, Safari, Opera
-    
 }
 
 /*#content-container.row {
@@ -125,11 +111,7 @@ table{
     /*height: 100%;*/
 }
 
-@media (min-width: 992px) {
-    #window {
-        width: 90%;
-    }
-}
+
 
 html, body {
     height: 100%;

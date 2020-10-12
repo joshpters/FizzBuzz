@@ -54,24 +54,21 @@
         <!-- Page Content -->
         <div class="content content-centered">
             <div class="container" id="content-container">
-                <div class="row text-center">
+                <div class="row text-center animate__animated animate__fadeIn animate__delay-1s">
                     <div class="col">
                         <h1>FizzBuzz</h1>
                         <p>If Value 1 is a multiple, it'll be tagged "Fizz" and Value 2 "Buzz". Where both are a multiple, it's a "FizzBuzz"!</p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xl-4 col-lg-4 bottom-buffer">   
+                    <div class="col bottom-buffer animate__animated animate__fadeIn animate__delay-1s">   
                         <input type="text" value="" id="input-value-one" class="input-string" placeholder="Value 1 (Fizz)" />
                     </div>
-                    <div class="col-xl-4 col-lg-4 bottom-buffer">
+                    <div class="col bottom-buffer animate__animated animate__fadeIn animate__delay-1s">
                         <input type="text" value="" id="input-value-two" class="input-string" placeholder="Value 2 (Buzz)" />
                     </div>
-                    <div class="col-xl-4 col-lg-4 bottom-buffer">
-                        <button type="submit" id="solve-it-button" class="custom-button">Buzz It</button>
-                    </div>
                 </div>
-                <div class="row text-center">
+                <div class="row text-center animate__animated animate__backInUp">
                     <div class="col">
                         <table class="table table-responsive-lg table-striped table-dark">
                             <tbody id="generate-grid">
@@ -105,13 +102,15 @@
                 html = html + `</tr>`
             }
             gridBody.innerHTML = html;
+            //gridBody.classList.add("animate__animated", "animate__zoomIn")
         }
 
         generateGrid();
 
-
-        document.getElementById('solve-it-button').addEventListener('click', function(){
-            userBuzzIt();
+        document.querySelectorAll('.input-string').forEach(elem => {
+            elem.addEventListener('keyup', function () {
+                userBuzzIt();
+            })
         })
 
 
@@ -144,6 +143,7 @@
         function tagIt(number, tag) {
             tableData = document.getElementById(`cell-${number}`)
             tableData.className = "";
+
             if (!tag[0] && !tag[1]) {
                 tableData.innerHTML = number;
                 return
@@ -159,10 +159,18 @@
                 fizzbuzz = fizzbuzz + "Buzz";
             }
 
-            
-            tableData.classList.add(`${fizzbuzz.toLowerCase()}`);
-            tableData.classList.add(`animate__bounceIn`)
-            tableData.innerHTML = fizzbuzz;
+            tableParent = tableData.parentElement;
+
+            newElem = document.createElement("td");
+            newElem.appendChild(document.createTextNode(fizzbuzz));
+            newElem.style.width = "10%"
+            newElem.setAttribute("id", `cell-${number}`);
+
+            tableParent.replaceChild(newElem, tableData);
+
+            newElem.classList.add(`${fizzbuzz.toLowerCase()}`);
+            newElem.classList.add(`animate__animated`)
+            newElem.classList.add(`animate__bounceIn`)
         }
 
         buzzIt(3, 5)
